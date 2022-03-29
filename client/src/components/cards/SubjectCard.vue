@@ -1,6 +1,9 @@
 <template>
   <div class="subjectCard">
-      <div class="display"> {{ subject.subject }} </div>
+      <div class="display">       
+      <button class="button "> Enter </button> 
+      {{ subject.subject }} 
+      </div>
   </div>
 </template>
 
