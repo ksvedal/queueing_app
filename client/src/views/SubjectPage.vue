@@ -1,16 +1,19 @@
 <template>
     <div class="subjectPage">
-        <h1> [ subject ] </h1> <br>
-        Show subjects here
+        <h1> [ queue for subject] </h1> <br>
+        
+        <Queue />
     </div>
 </template>
 
 <script>
 // import subjects here
+import Queue from '@/components/Queue.vue'
+
 export default {
     name: 'SubjectPage',
     components: {
-        // Fill
+        Queue
     }
 }
 </script>

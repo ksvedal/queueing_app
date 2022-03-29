@@ -1,6 +1,6 @@
 <template>
     <div class="students">
-        <UserCard v-for="user in users" :key="user.id" :calculation="user"/>
+        <UserCard v-for="user in users" :key="user.id" :user="user"/>
     </div>
 </template>
 
@@ -24,7 +24,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

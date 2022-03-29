@@ -20,12 +20,14 @@
 <style>
 :root {
   /* Color and styling variables */
-  --primary-color: #e2e2e2;
-  --secondary-color: #eeeeee;
-  --tertiary-color: #cacaca;
-  --text-color: #333333;
-  --pop-color: #5c9aaa;
-  --pop-color2: #4f2f3f;
+  --primary-color: #212121; 
+  --secondary-color: #1a1a1a;
+  --tertiary-color: #101010;
+  --text-color: #ededed;
+  --text-color-invert: #242424;
+  --pop-color: #fc95a2;
+  --pop-color2: #fff8e3;
+
 
   /* Border Styling */
   --border-radius: 3px;
@@ -38,13 +40,12 @@
 }
 
 .dark-mode {
-  --primary-color: #212121; 
-  --secondary-color: #1a1a1a;
-  --tertiary-color: #101010;
-  --text-color: #ededed;
-  --text-color-invert: #242424;
-  --pop-color: #fc95a2;
-  --pop-color2: #fff8e3;
+  --primary-color: #e2e2e2;
+  --secondary-color: #eeeeee;
+  --tertiary-color: #cacaca;
+  --text-color: #333333;
+  --pop-color: #5c9aaa;
+  --pop-color2: #4f2f3f;
 }
 
 #app {
@@ -141,4 +142,23 @@ body {
 .full {
   width: 100%;
 }
+
+/* Additional styling */
+
+.display {
+    font-size: 15px;
+    grid-column: 1/4;
+    padding: 12px 20px 12px 20px;
+    margin: var(--small-margin);
+    background-color: var(--tertiary-color);
+    border: var(--border) var(--secondary-color);
+    border-radius: var(--border-radius);
+    height: auto;
+}
+
+.right {
+  float: right;
+  padding-bottom: 0px;
+}
+
 </style>
