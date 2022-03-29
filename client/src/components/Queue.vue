@@ -6,7 +6,7 @@
 
 <script>
 import UserService from '@/services/UserService.js'
-import UserCard from '@/cards/UserCard.vue'
+import UserCard from '@/components/cards/UserCard.vue'
 
 export default {
     components: {
