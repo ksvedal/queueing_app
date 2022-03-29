@@ -20,7 +20,9 @@ public class BackendApplication {
 			public void addCorsMappings(CorsRegistry corsRegistry) {
 				corsRegistry
 						.addMapping("/**")
-						.allowedOrigins("http://localhost:8080");
+						.allowedOrigins("http://localhost:8080")
+						.allowCredentials(true)
+						.allowedMethods("PUT", "GET", "POST", "OPTIONS");
 			}
 		};
 	}

@@ -2,8 +2,8 @@
   <div class="userCard">
       <div class="display"> 
         {{ user.username }} 
-        <button class="button right"> Rett </button> 
-        <button class="button right"> Utsett </button> 
+        <button class="button "> Rett </button> 
+        <button class="button "> Utsett </button> 
         </div>
   </div>
 </template>

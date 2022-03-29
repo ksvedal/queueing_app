@@ -153,7 +153,6 @@ body {
     background-color: var(--tertiary-color);
     border: var(--border) var(--secondary-color);
     border-radius: var(--border-radius);
-    height: auto;
 }
 
 .right {
