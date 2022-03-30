@@ -1,23 +1,37 @@
 <template>
   <div class="row">
-    <div class="col-2"> 
-      <br>
+    <div class="col-1"> <br> </div>
+    <div class="col-3"> 
+      <ProfileCard />
     </div>
   
-    <div class="col-8">
+    <div class="col-7">
       <router-link :to="{ name: 'HomePage' }"> 
         <button class="button full"> Home </button> 
       </router-link>   
-      <br> <br> <br>
+      <br> <br>
       <router-view />
     </div>
-    <div class="col-2"> 
+    <div class="col-1"> 
       <br>
     </div>
   </div>
 </template>
 
+<script>
+import ProfileCard from '@/components/cards/ProfileCard'
+
+
+export default {
+  components: {
+        ProfileCard
+    }, 
+}
+</script>
+
 <style>
+@import url('http://fonts.cdnfonts.com/css/american-typewriter');
+
 :root {
   /* Color and styling variables */
   --primary-color: #212121; 
@@ -25,18 +39,20 @@
   --tertiary-color: #101010;
   --text-color: #ededed;
   --text-color-invert: #242424;
-  --pop-color: #fc95a2;
-  --pop-color2: #fff8e3;
+  --pop-color: #eedeb1;
+  --pop-color2: #0e0e0e;
 
 
   /* Border Styling */
-  --border-radius: 3px;
-  --border: 0px solid;
+  --border-radius: 4px;
+  --border: 1.5px solid;
 
   /* Content Space Styling */
-  --small-margin: 2px;
-  --big-margin: 40px;
+  --small-margin: 3px;
+  --big-margin: 50px;
   --space: 6px;
+
+
 }
 
 .dark-mode {
@@ -45,7 +61,7 @@
   --tertiary-color: #cacaca;
   --text-color: #333333;
   --pop-color: #5c9aaa;
-  --pop-color2: #4f2f3f;
+  --pop-color2: #ab70bd;
 }
 
 #app {
@@ -65,6 +81,10 @@ h1 {
   text-align: center;
   padding-left: var(--space);
   font-size: 30px;
+}
+
+.centeredText {
+  text-align: center;
 }
 
 /* Mobile: */
@@ -135,7 +155,7 @@ body {
 .button:hover {
   color: var(--text-color-invert);
   background-color: var(--pop-color);
-  border: var(--border) var(--text-color);
+  border: var(--border) var(--pop-color2);
   border-radius: var(--border-radius);
 }
 
@@ -150,14 +170,39 @@ body {
     grid-column: 1/4;
     padding: 12px 20px 12px 20px;
     margin: var(--small-margin);
-    background-color: var(--tertiary-color);
-    border: var(--border) var(--secondary-color);
+    background-color: var(--secondary-color);
+    border: var(--border) var(--tertiary-color);
     border-radius: var(--border-radius);
 }
 
 .right {
   float: right;
   padding-bottom: 0px;
+}
+
+input[type], select {
+  width: 100%;
+  padding: 12px 20px 12px 20px;
+  outline: 0;
+  margin-bottom: var(--space);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: var(--border) var(--tertiary-color);
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/* IMAGE */
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    width: 100%;
+    object-fit: contain;
 }
 
 </style>

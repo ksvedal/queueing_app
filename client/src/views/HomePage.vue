@@ -1,7 +1,6 @@
 <template>
     <div class="homePage">
-        <h1> [ home ] </h1> <br>
-        Please choose subject
+        <h1> Home : Your subjects </h1> <br>
         
         <SubjectCard v-for="subject in subjects" :key="subject.id" :subject="subject"/>
     </div>
