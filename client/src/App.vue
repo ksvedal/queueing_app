@@ -3,13 +3,16 @@
     <div class="col-1"> <br> </div>
     <div class="col-3"> 
       <ProfileCard />
+
+      <router-link :to="{ name: 'HomePage' }"> 
+        <button class="button full"> Home </button> 
+      </router-link>  
+      <button class="button full"> Log out </button> 
+
+
     </div>
   
     <div class="col-7">
-      <router-link :to="{ name: 'HomePage' }"> 
-        <button class="button full"> Home </button> 
-      </router-link>   
-      <br> <br>
       <router-view />
     </div>
     <div class="col-1"> 
@@ -42,26 +45,23 @@ export default {
   --pop-color: #eedeb1;
   --pop-color2: #0e0e0e;
 
-
   /* Border Styling */
-  --border-radius: 4px;
+  --border-radius: 2px;
   --border: 1.5px solid;
 
   /* Content Space Styling */
-  --small-margin: 3px;
-  --big-margin: 50px;
-  --space: 6px;
-
-
+  --small-margin: 2px;
+  --big-margin: 20px;
+  --space: 10px;
 }
 
 .dark-mode {
   --primary-color: #e2e2e2;
   --secondary-color: #eeeeee;
-  --tertiary-color: #cacaca;
+  --tertiary-color: #f5f5f5;
   --text-color: #333333;
-  --pop-color: #5c9aaa;
-  --pop-color2: #ab70bd;
+  --pop-color: #ffffff;
+  --pop-color2: #fafafa;
 }
 
 #app {
@@ -79,12 +79,16 @@ export default {
 h1 {
   color: var(--text-color);
   text-align: center;
-  padding-left: var(--space);
   font-size: 30px;
 }
 
 .centeredText {
   text-align: center;
+}
+
+.full {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* Mobile: */
@@ -130,7 +134,7 @@ body {
   background-color: var(--primary-color); 
   color: var(--text-color); 
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 11px; 
+  font-size: 14px; 
 }
 
 /* BUTTONS */
@@ -139,7 +143,8 @@ body {
   padding: 12px 20px 12px 20px;
   outline: 0;
   cursor: pointer;
-  margin: var(--small-margin);
+  margin-top: var(--small-margin);
+  margin-bottom: var(--small-margin);
   border: var(--border) var(--tertiary-color);
   border-radius: var(--border-radius);
   color: var(--text-color);
@@ -149,7 +154,6 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   text-decoration: none;
-  object-fit: contain;
 }
 
 .button:hover {
@@ -159,32 +163,23 @@ body {
   border-radius: var(--border-radius);
 }
 
-.full {
-  width: 100%;
-}
-
 /* Additional styling */
 
 .display {
-    font-size: 15px;
-    grid-column: 1/4;
+    font-size: 20px;
     padding: 12px 20px 12px 20px;
-    margin: var(--small-margin);
+    margin-top: var(--space);  
+    margin-bottom: var(--space);
     background-color: var(--secondary-color);
     border: var(--border) var(--tertiary-color);
     border-radius: var(--border-radius);
-}
-
-.right {
-  float: right;
-  padding-bottom: 0px;
 }
 
 input[type], select {
   width: 100%;
   padding: 12px 20px 12px 20px;
   outline: 0;
-  margin-bottom: var(--space);
+  margin-bottom: var(--small-margin);
   background-color: var(--secondary-color);
   color: var(--text-color);
   border-radius: var(--border-radius);

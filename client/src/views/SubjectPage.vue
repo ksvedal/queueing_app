@@ -1,9 +1,9 @@
 <template>
     <div class="subjectPage">
-        <button class="button full" @click="queueForm = !queueForm"> Queue up </button> <br> <br>
-        <div v-show="queueForm"> <QueueForm /> <br> <br> </div>
         <h1> Queue for {{ this.subject.subject }} </h1> <br>
         <Queue />
+        <button class="button full" @click="queueForm = !queueForm"> Queue up </button> <br> <br>
+        <div v-show="queueForm"> <QueueForm /> <br> <br> </div>
     </div>
 </template>
 

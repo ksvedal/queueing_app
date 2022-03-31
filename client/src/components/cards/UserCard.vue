@@ -1,10 +1,15 @@
 <template>
   <div class="userCard">
       <div class="display"> 
-        {{ user.username }} 
-        <button class="button "> Rett </button> 
-        <button class="button "> Utsett </button> 
+        <div class="centeredText">
+            {{ user.username }} 
         </div>
+        <div class="centeredText">
+            <button class="button"> Give help </button> 
+            <button class="button"> Approve </button> 
+            <button class="button"> Extend </button> 
+        </div>
+      </div>
   </div>
 </template>
 
