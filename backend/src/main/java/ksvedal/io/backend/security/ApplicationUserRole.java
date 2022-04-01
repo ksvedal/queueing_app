@@ -8,7 +8,7 @@ import static ksvedal.io.backend.security.ApplicationUserPermission.*;
 
 public enum ApplicationUserRole {
     STUDENT(Sets.newHashSet()),
-    ADMINISTRATOR(Sets.newHashSet(COURSE_READ, COURSE_WRITE, STUDENT_READ, STUDENT_WRITE));
+    ADMINISTRATOR(Sets.newHashSet());
 
     private final Set<ApplicationUserPermission> permissions;
 
