@@ -12,8 +12,7 @@ const apiClient = axios.create({
       'Content-Type': `application/json`,
       'Authorization': `Basic ${token}`,
     } 
-  })     
-
+})     
 
 export default {
   getUser(username) {

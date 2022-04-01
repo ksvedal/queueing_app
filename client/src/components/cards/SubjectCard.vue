@@ -6,6 +6,7 @@
 
 <script>
 import router from '@/router/index.js'
+import store from '@/store/index.js'
 
 export default {
     name: "SubjectCard",
@@ -17,8 +18,7 @@ export default {
     },
     methods: {
         enterSubject(subject) {
-                        this.$store.dispatch('setSelectedSubject', subject)
-,
+            store.commit('SET_SELECTED_SUBJECT', subject)
             router.push({
                 name: 'SubjectPage'
             })

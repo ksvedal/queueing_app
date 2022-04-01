@@ -11,6 +11,7 @@
 // import subjects here
 import Queue from '@/components/Queue.vue'
 import QueueForm from '@/components/forms/QueueForm.vue'
+import store from '@/store/index.js'
 
 export default {
     name: 'SubjectPage',
@@ -27,7 +28,7 @@ export default {
     methods: {
     },
     created() {
-        this.subject = this.$store.dispatch('getSelectedSubject')
+        this.subject = store.getters.GET_SELECTED_SUBJECT
     }
 }
 </script>

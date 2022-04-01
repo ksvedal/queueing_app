@@ -7,7 +7,9 @@
       <router-link :to="{ name: 'HomePage' }"> 
         <button class="button full"> Home </button> 
       </router-link>  
-      <button class="button full"> Log out </button> 
+      <router-link to="/login">
+        <button class="button full"> Log out </button> 
+      </router-link>
 
 
     </div>
@@ -80,6 +82,10 @@ h1 {
   color: var(--text-color);
   text-align: center;
   font-size: 30px;
+}
+
+h3 {
+  text-align: center;
 }
 
 .centeredText {
@@ -197,7 +203,10 @@ input[type], select {
 }
 .fill img {
     width: 100%;
+    height: auto;
     object-fit: contain;
-}
+    border-radius: 100%;
+    border: var(--border) var(--tertiary-color);
+  }
 
 </style>
