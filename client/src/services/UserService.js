@@ -16,12 +16,18 @@ const apiClient = axios.create({
 
 export default {
   getUser(username) {
-    return apiClient.get("/user/" + username)
+    return apiClient.get('/user/' + username)
   },
   getUsers() {
     return apiClient.get('/user')
   },
+  getUsersBySubject(subject) {
+      return apiClient.get('/user/' + subject)
+  },
   addUser(user) {
     return apiClient.put('/user/' + user)
+  },
+  getQueueBySubject(subject) {
+      return apiClient.get('/queue/' + subject)
   }
 }

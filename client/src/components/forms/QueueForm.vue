@@ -5,7 +5,7 @@
         v-model="username"
         label="Your name"
         type="text"
-        placeholder="linda"
+        placeholder="Room"
       />
 
       <input 
@@ -13,7 +13,7 @@
         v-model="room"
         label="Room"
         type="email"
-        placeholder="Room"
+        placeholder="Table"
       />
 
       <input
@@ -21,7 +21,15 @@
         v-model="table"
         label="Table"
         type="text"
-        placeholder="Table"
+        placeholder="Assignment"
+      />
+
+      <input
+        class ="full" 
+        v-model="table"
+        label="Table"
+        type="text"
+        placeholder="Comment"
       />
 
       <button 
