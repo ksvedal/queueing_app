@@ -39,8 +39,8 @@ export default {
 
 :root {
   /* Color and styling variables */
-  --primary-color: #212121; 
-  --secondary-color: #1a1a1a;
+  --primary-color: #1d1d1d; 
+  --secondary-color: #161616;
   --tertiary-color: #101010;
   --text-color: #ededed;
   --text-color-invert: #242424;
@@ -48,8 +48,8 @@ export default {
   --pop-color2: #0e0e0e;
 
   /* Border Styling */
-  --border-radius: 2px;
-  --border: 1.5px solid;
+  --border-radius: 4px;
+  --border: 0px solid;
 
   /* Content Space Styling */
   --small-margin: 2px;
@@ -148,7 +148,6 @@ body {
 .button {
   padding: 12px 20px 12px 20px;
   outline: 0;
-  cursor: pointer;
   margin-top: var(--small-margin);
   margin-bottom: var(--small-margin);
   border: var(--border) var(--tertiary-color);
@@ -162,7 +161,24 @@ body {
   text-decoration: none;
 }
 
+.button.black {
+  background-color: var(--tertiary-color) ;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: var(--primary-color);
+}
+
+button:disabled:hover,
+button[disabled]:hover{
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  cursor: initial;
+}
+
 .button:hover {
+  cursor: pointer;
   color: var(--text-color-invert);
   background-color: var(--pop-color);
   border: var(--border) var(--pop-color2);

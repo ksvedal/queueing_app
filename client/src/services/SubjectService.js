@@ -47,5 +47,8 @@ const apiClient = axios.create({
 export default {
   getSubjects() {
     return apiClient.get('/subject')
+  },
+  getSubjectsByUser(user) {
+      return apiClient.get('/subject/' + user)
   }
 }

@@ -13,9 +13,17 @@ public class Subject {
     @Column(name = "subject", nullable = false)
     private String subject;
 
-    public Subject(Long id, String subject) {
+    @Column(name = "assignments")
+    private int assignment;
+
+    @Column(name = "active")
+    private int active;
+
+    public Subject(Long id, String subject, int assignment, int active) {
         this.id = id;
         this.subject = subject;
+        this.assignment = assignment;
+        this.active = active;
     }
 
     private Subject() {}
@@ -34,5 +42,21 @@ public class Subject {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public int getAssignment() {
+        return assignment;
+    }
+
+    public void setAssignment(int assignment) {
+        this.assignment = assignment;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
     }
 }

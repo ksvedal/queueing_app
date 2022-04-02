@@ -3,8 +3,8 @@
   <div class="fill">
     <img src="profile.png" alt="Girl in a jacket">
   </div> <br> <br>
-      Username <br>
-      Role <br>
+      <b> Linda </b> <br>
+      Admin <br>
       Online <br> <br>
 
   </div>

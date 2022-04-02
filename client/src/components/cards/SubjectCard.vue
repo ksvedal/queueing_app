@@ -1,6 +1,12 @@
 <template>
-  <div class="subjectCard">
-    <button class="button full" @click="enterSubject(subject)"> {{ subject.subject }}  </button> 
+  <div v-if="subject.active === 1" 
+    class="subjectCard">
+    <button class="button full"
+    @click="enterSubject(subject)"> {{ subject.subject }}  </button> 
+  </div>
+  <div v-else 
+  class="subjectCard">
+  <button class="button full" disabled> {{ subject.subject }} </button>
   </div>
 </template>
 

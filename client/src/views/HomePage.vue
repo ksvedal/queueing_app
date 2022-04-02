@@ -3,7 +3,7 @@
         <h1> Home </h1> <br>
         <h3> Your Subjects: </h3> <br>
         
-        <SubjectCard v-for="subject in subjects" :key="subject.id" :subject="subject"/>
+        <SubjectCard v-for="subject in subjects" :key="subject.id" :subject="subject" :assignments="assignments" />
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
         }
     },
     created() {
-        SubjectService.getSubjects().then((response) => {
+        SubjectService.getSubjectsByUser("bob").then((response) => {
             this.subjects = response.data;
         }).catch(error => console.log(error))
     }

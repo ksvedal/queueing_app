@@ -45,7 +45,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 //.antMatchers(HttpMethod.POST, "/token").permitAll()
-                .antMatchers("/user", "/subject").permitAll()//hasRole(ADMINISTRATOR.name())
+                .antMatchers("/user", "/subject", "/subject/", "/subject/**").permitAll()//hasRole(ADMINISTRATOR.name())
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();

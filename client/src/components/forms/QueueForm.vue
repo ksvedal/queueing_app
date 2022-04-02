@@ -25,7 +25,7 @@
       />
 
       <button 
-        class="button full" 
+        class="button full black" 
         type="submit">
         Enter queue
       </button>

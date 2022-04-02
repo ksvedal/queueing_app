@@ -5,9 +5,9 @@
             {{ user.username }} 
         </div>
         <div class="centeredText">
-            <button class="button"> Give help </button> -
-            <button class="button"> Approve </button> -
-            <button class="button"> Extend </button>
+            <button class="button black"> Give help </button> -
+            <button class="button black"> Approve </button> -
+            <button class="button black"> Extend </button>
         </div>
       </div>
   </div>
