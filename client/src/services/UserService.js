@@ -1,20 +1,23 @@
 import axios from 'axios'
+import store from '@/store/index.js'
 
-const username = "linda"
-const password = "linda"
-const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
-
-const apiClient = axios.create({
-    baseURL: 'http://localhost:42069',
-    withCredentials: false,
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': `application/json`,
-      'Authorization': `Basic ${token}`,
-    } 
-})     
+let apiClient = null
 
 export default {
+  setup() {
+    let username = store.getters.GET_USERNAME;
+    let password = store.getters.GET_PASSWORD;
+    let token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
+    apiClient = axios.create({
+      baseURL: 'http://localhost:42069',
+      withCredentials: true,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': `application/json`,
+        'Authorization': `Basic ${token}`,
+      } 
+  })  
+  },
   getUser(username) {
     return apiClient.get('/user/' + username)
   },
@@ -28,7 +31,8 @@ export default {
     return apiClient.put('/user/' + user)
   },
   checkIfStudent() {
-      return apiClient.get('/student/status/check').catch(function (error) {
+      return apiClient.get('/student/status/check')
+      .catch(function (error) {
         if (error.response) {
           console.log(error.response.data);
           console.log(error.response.status);

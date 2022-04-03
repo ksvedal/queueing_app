@@ -12,8 +12,8 @@
         </div> 
         <br>
         <div class="centeredText">
-            <button class="button black"> Give help </button> -
-            <button class="button black"> Approve </button> -
+            <button class="button black"> Give help </button>  
+            <button class="button black"> Approve </button>  
             <button class="button black"> Extend </button>
         </div>
       </div>

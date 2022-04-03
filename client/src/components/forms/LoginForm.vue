@@ -38,30 +38,30 @@ export default {
   name: 'LoginComponent',
   methods: {
     async handleClickSignin (){
+      store.commit('SET_USERNAME', this.username)
+      store.commit('SET_PASSWORD', this.password)
+      UserService.setup(),
       UserService.checkIfStudent()
       .then((response) => {
         if (response) {
-            store.commit('SET_USERNAME', this.username)
-            store.commit('SET_PASSWORD', this.password)
             store.commit('SET_STUDENT', true)
+            store.commit('SET_LOGIN', true)
             this.studentStatus = response.data;
         } else {
             this.studentStatus = "Not student"
         }
       })
-
       UserService.checkIfAdministrator()
       .then((response) => {
         if (response) {
-            store.commit('SET_USERNAME', this.username)
-            store.commit('SET_PASSWORD', this.password)
             store.commit('SET_ADMINISTRATOR', true)
+            store.commit('SET_LOGIN', true)
             this.administratorStatus = response.data;
         } else {
             this.administratorStatus = "Not administrator"
         }
       })
-    }
+    },
   },
   data() {
       return {
@@ -70,6 +70,9 @@ export default {
         studentStatus: '',
         administratorStatus: '',
       }
+  },
+  created() {
+    store.commit('SET_LOGIN', false)
   }
 }
 </script>

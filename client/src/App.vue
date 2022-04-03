@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-1"> <br> </div>
     <div class="col-3"> 
-      <ProfileCard />
+      <ProfileCard :key="profileKey"/>
 
       <router-link :to="{ name: 'HomePage' }"> 
         <button class="button full"> Home </button> 
@@ -30,7 +30,17 @@ import ProfileCard from '@/components/cards/ProfileCard'
 export default {
   components: {
         ProfileCard
-    }, 
+  }, 
+  data() {
+    return {
+      profileKey: 0,
+    }
+  },
+  methods: {
+    profileRender() {
+      this.profileKey += 1;
+    }
+  }
 }
 </script>
 

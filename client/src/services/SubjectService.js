@@ -1,8 +1,9 @@
 import axios from 'axios'
 
-const username = "bob"
-const password = "bob"
-const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
+
+let username = "bob"
+let password = "bob"
+let token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:42069',

@@ -7,7 +7,6 @@
        {{ administratorStatus}} <br>
       {{ studentStatus }} <br> <br>
       {{ online }}
-
   </div>
 </template>
 
@@ -32,7 +31,7 @@ export default {
         if (store.getters.GET_USERNAME) {
             this.online = 'Online'
         }
-    }
+    },
 }
 </script>
 
