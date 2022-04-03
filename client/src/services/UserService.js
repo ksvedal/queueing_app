@@ -27,7 +27,24 @@ export default {
   addUser(user) {
     return apiClient.put('/user/' + user)
   },
-  getQueueBySubject(subject) {
-      return apiClient.get('/queue/' + subject)
+  checkIfStudent() {
+      return apiClient.get('/student/status/check').catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+    })
+  },
+  checkIfAdministrator() {
+      return apiClient.get('/administrator/status/check')
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      
+  })
   }
 }

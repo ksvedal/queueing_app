@@ -18,8 +18,6 @@ export default {
     name: "SubjectCard",
     props: {
         subject: {
-            type: Object,
-            required: true
         }
     },
     methods: {

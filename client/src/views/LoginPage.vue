@@ -2,19 +2,19 @@
   <!--3. Use -->
   <div>
     <h3> Log in here: </h3> <br>
-    <LoginComponent />
+    <LoginForm />
   </div>
 </template>
 
 <script>
 // 1. Import
-import LoginComponent from "@/components/LoginComponent.vue";
+import LoginForm from "@/components/forms/LoginForm.vue";
 
 // 2. Bind
 export default {
   name: 'LoginPage',
   components: {
-    LoginComponent,
+    LoginForm,
   }
 }
 </script>

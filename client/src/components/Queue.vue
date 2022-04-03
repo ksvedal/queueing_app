@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UserService from '@/services/UserService.js'
+import QueueService from '@/services/QueueService.js'
 import UserCard from '@/components/cards/UserCard.vue'
 import store from '@/store/index.js'
 
@@ -21,7 +21,7 @@ export default {
     },
     created() {
         this.subject = store.getters.GET_SELECTED_SUBJECT;
-        UserService.getQueueBySubject(this.subject.subject).then((response) => {
+        QueueService.getQueueBySubject(this.subject.subject).then((response) => {
             this.users = response.data;
         }).catch(error => console.log(error))
     }

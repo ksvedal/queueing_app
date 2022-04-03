@@ -3,7 +3,7 @@
         <h1> Home </h1> <br>
         <h3> Your Subjects: </h3> <br>
         
-        <SubjectCard v-for="subject in subjects" :key="subject.id" :subject="subject" :assignments="assignments" />
+        <SubjectCard v-for="subject in subjects" :key="subject.id" :subject=subject />
     </div>
 </template>
 
