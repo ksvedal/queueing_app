@@ -20,6 +20,7 @@ export default {
         }
     },
     created() {
+        QueueService.setup();
         this.subject = store.getters.GET_SELECTED_SUBJECT;
         QueueService.getQueueBySubject(this.subject.subject).then((response) => {
             this.users = response.data;

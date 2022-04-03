@@ -28,17 +28,15 @@ import ProfileCard from '@/components/cards/ProfileCard'
 
 
 export default {
+  profileRender() {
+      this.profileKey += 1;
+  },
   components: {
         ProfileCard
   }, 
   data() {
     return {
       profileKey: 0,
-    }
-  },
-  methods: {
-    profileRender() {
-      this.profileKey += 1;
     }
   }
 }
