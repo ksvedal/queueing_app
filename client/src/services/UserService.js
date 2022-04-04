@@ -16,7 +16,7 @@ export default {
         'Content-Type': `application/json`,
         'Authorization': `Basic ${token}`,
       } 
-  })  
+    })  
   },
   getUser(username) {
     return apiClient.get('/user/' + username)

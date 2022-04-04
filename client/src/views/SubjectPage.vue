@@ -34,8 +34,6 @@ export default {
         QueueForm,
         AddStudentToSubjectForm
     },
-    methods: {
-    },
     created() {
         this.subject = store.getters.GET_SELECTED_SUBJECT
         this.studentStatus = store.getters.GET_STUDENTSTATUS

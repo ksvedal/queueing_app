@@ -1,5 +1,8 @@
-describe('My Component', () => {
-  it('renders successfully', () => {
-    expect(true).toBe(true)
+import {mount} from '@/vue/test-utils'
+import UserCard from '@/components/cards/UserCard'
+
+describe('UserCard', () => {
+  it('renders UserCard data successfully', () => {
+    mount(UserCard)
   })
 })
