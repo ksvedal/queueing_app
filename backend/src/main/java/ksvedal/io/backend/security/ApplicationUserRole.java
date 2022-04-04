@@ -1,10 +1,7 @@
 package ksvedal.io.backend.security;
 
 import com.google.common.collect.Sets;
-
 import java.util.Set;
-
-import static ksvedal.io.backend.security.ApplicationUserPermission.*;
 
 public enum ApplicationUserRole {
     STUDENT(Sets.newHashSet()),

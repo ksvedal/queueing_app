@@ -2,6 +2,7 @@ package ksvedal.io.backend.repo;
 
 import ksvedal.io.backend.model.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,8 @@ public interface SubjectRepository extends JpaRepository<Subject, Long> {
             "left join subject on subject.id = enrollment.subject_id " +
             "where user.username = :user", nativeQuery = true)
     List<Subject> findSubjectByUser(@Param("user") String user);
+
+    @Query(value = "update subject set active = 1 where subject = :subject", nativeQuery = true)
+    @Modifying(clearAutomatically = true)
+    void setSubjectActive(@Param("subject") String subject);
 }

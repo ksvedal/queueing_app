@@ -33,6 +33,7 @@
 <script>
 import UserService from '@/services/UserService.js'
 import store from '@/store/index.js'
+import ProfileCard from '@/components/cards/ProfileCard.vue'
 
 export default {
   name: 'LoginComponent',
@@ -47,7 +48,9 @@ export default {
             store.commit('SET_STUDENT', true)
             store.commit('SET_LOGIN', true)
             this.studentStatus = response.data;
+            ProfileCard.update()
         } else {
+            store.commit('SET_STUDENT', false)
             this.studentStatus = "Not student"
         }
       })
@@ -57,7 +60,9 @@ export default {
             store.commit('SET_ADMINISTRATOR', true)
             store.commit('SET_LOGIN', true)
             this.administratorStatus = response.data;
+            ProfileCard.update()
         } else {
+            store.commit('SET_ADMINISTRATOR', false)
             this.administratorStatus = "Not administrator"
         }
       })
@@ -72,7 +77,10 @@ export default {
       }
   },
   created() {
+    store.commit('SET_USERNAME', null)
     store.commit('SET_LOGIN', false)
+    store.commit('SET_ADMINISTRATOR', false)
+    store.commit('SET_STUDENT', false)
   }
 }
 </script>

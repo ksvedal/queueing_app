@@ -6,8 +6,7 @@ import ksvedal.io.backend.repo.SubjectRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,11 +18,29 @@ public class SubjectController {
     @Autowired
     private SubjectRepository subjectRepository;
 
-    @GetMapping("/subject")
+    @GetMapping("administrator/subject")
     public List<Subject> getSubjects() { return subjectRepository.findAll(); }
 
     @GetMapping("/subject/{user}")
     public List<Subject> getSubjectByUser(@PathVariable("user") String user) {
         return subjectRepository.findSubjectByUser(user);
+    }
+
+    @RequestMapping(value = "/administrator/subject/add", method = RequestMethod.POST)
+    public String addSubject(@RequestBody Subject subject) {
+        subjectRepository.save(subject);
+        return "Success";
+    }
+
+    @RequestMapping(value = "administrator/subject/addStudent", method = RequestMethod.POST)
+    public String addStudentToSubject(@RequestParam String subject, @RequestParam String user) {
+        // SOMETHING
+        return "Not a functional endpoint";
+    }
+
+    @PutMapping("/administrator/subject/status/active/{subject}")
+    public String setSubjectActive(@PathVariable("subject") String subject) {
+        subjectRepository.setSubjectActive(subject);
+        return "" + subject + " is now active";
     }
 }

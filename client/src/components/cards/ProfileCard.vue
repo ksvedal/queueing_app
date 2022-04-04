@@ -4,9 +4,10 @@
     <img src="profile.png" alt="Girl in a jacket">
   </div> <br> <br>
       <b> {{ username }} </b> <br>
+            {{ online }} <br>
+
        {{ administratorStatus}} <br>
       {{ studentStatus }} <br> <br>
-      {{ online }}
   </div>
 </template>
 
@@ -16,20 +17,20 @@ import store from '@/store/index.js'
 export default {
     name: "ProfileCard",
 
-    data () {
-        return {
-            username: 'Not logged in',
-            administratorStatus: '',
-            studentStatus: '',
-            online: '',
-        }
-    },
-    created() {
+    update() {
         this.username = store.getters.GET_USERNAME;
         this.administratorStatus = store.getters.GET_ADMINISTRATORSTATUS;
         this.studentStatus = store.getters.GET_STUDENTSTATUS;
         if (store.getters.GET_USERNAME) {
             this.online = 'Online'
+        }
+    },
+    data () {
+        return {
+            username: 'Placeholder',
+            online: 'Placeholder',
+            administratorStatus: 'Placeholder',
+            studentStatus: '',
         }
     },
 }

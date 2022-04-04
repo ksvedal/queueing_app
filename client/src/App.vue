@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-1"> <br> </div>
     <div class="col-3"> 
-      <ProfileCard :key="profileKey"/>
+      <ProfileCard />
 
       <router-link :to="{ name: 'HomePage' }"> 
         <button class="button full"> Home </button> 
@@ -10,8 +10,6 @@
       <router-link to="/login">
         <button class="button full"> Log out </button> 
       </router-link>
-
-
     </div>
   
     <div class="col-7">
@@ -25,19 +23,19 @@
 
 <script>
 import ProfileCard from '@/components/cards/ProfileCard'
-
+import store from '@/store/index.js'
 
 export default {
-  profileRender() {
-      this.profileKey += 1;
-  },
   components: {
         ProfileCard
   }, 
   data() {
     return {
-      profileKey: 0,
+      administratorStatus: false,
     }
+  },
+  created() {
+    this.administratorStatus = store.getters.GET_ADMINISTRATORSTATUS
   }
 }
 </script>
@@ -97,6 +95,10 @@ h3 {
 }
 
 .centeredText {
+  text-align: center;
+}
+
+.center {
   text-align: center;
 }
 
@@ -171,6 +173,10 @@ body {
 
 .button.black {
   background-color: var(--tertiary-color) ;
+}
+
+.button.small {
+  padding: 6px 10px 6px 10px;
 }
 
 button:disabled,

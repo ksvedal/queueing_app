@@ -12,22 +12,33 @@
         </div> 
         <br>
         <div class="centeredText">
-            <button class="button black"> Give help </button>  
-            <button class="button black"> Approve </button>  
-            <button class="button black"> Extend </button>
+            <button class="button black" v-if="administratorStatus"> Give help </button>  
+            <button class="button black" v-if="administratorStatus"> Approve </button>  
+            <button class="button black" v-if="administratorStatus"> Extend </button>
         </div>
       </div>
   </div>
 </template>
 
 <script>
+import store from '@/store/index.js'
+
 export default {
     name: "UserCard",
+    data () {
+        return {
+            administratorStatus: false
+        }
+    },
     props: {
         user: {
             type: Object,
             required: true
         }
+    },
+    created() {
+        this.administratorStatus = store.getters.GET_ADMINISTRATORSTATUS
     }
+
 }
 </script>

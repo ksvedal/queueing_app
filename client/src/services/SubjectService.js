@@ -18,10 +18,19 @@ export default {
       } 
     })  
   },
-  getSubjects() {
-    return apiClient.get('/subject')
+  getAllSubjects() {
+    return apiClient.get('administrator/subject')
   },
   getSubjectsByUser(user) {
-      return apiClient.get('/subject/' + user)
+    return apiClient.get('/subject/' + user)
+  },
+  setSubjectActive(subject) {
+    return apiClient.put('/administrator/subject/status/active/' + subject)
+  },
+  setSubjectInactive(subject) {
+    return apiClient.put('/administrator/subject/status/inactive/' + subject)
+  },
+  addSubject(subject) {
+    return apiClient.post('/administrator/subject/add' + subject)
   }
 }
