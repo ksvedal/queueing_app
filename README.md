@@ -26,4 +26,5 @@ axios, qs, vee-validate, vue-router, vuex, yup, eslint, jest.
 ### Run all tests
 ```
 npm run test:unit
+Tests for backend: Junit.
 ```
