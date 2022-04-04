@@ -1,7 +1,7 @@
 <template>
   <div class="profileCard display centeredText">
   <div class="fill">
-    <img src="profile.png" alt="Girl in a jacket">
+    <img src="profile.png" alt="Your profile picture">
   </div> <br> <br>
       <b> {{ username }} </b> <br>
             {{ online }} <br>

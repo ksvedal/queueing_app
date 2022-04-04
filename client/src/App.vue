@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-1"> <br> </div>
     <div class="col-3"> 
-      <ProfileCard />
+      <ProfileCard /> 
 
       <router-link :to="{ name: 'HomePage' }"> 
         <button class="button full"> Home </button> 
@@ -10,8 +10,8 @@
       <router-link to="/login">
         <button class="button full"> Log out </button> 
       </router-link>
+      <br> <br>
     </div>
-  
     <div class="col-7">
       <router-view />
     </div>
