@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/user")
+    @GetMapping("/administrator/user")
     public List<User> getUsers() {
         return userRepository.findAll();
     }

@@ -1,7 +1,6 @@
 package ksvedal.io.backend.web;
 
 import ksvedal.io.backend.model.Subject;
-import ksvedal.io.backend.model.User;
 import ksvedal.io.backend.repo.SubjectRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +17,8 @@ public class SubjectController {
     @Autowired
     private SubjectRepository subjectRepository;
 
-    @GetMapping("administrator/subject")
-    public List<Subject> getSubjects() { return subjectRepository.findAll(); }
+    @GetMapping("/administrator/subject")
+    public List<Subject> getAllSubjects() { return subjectRepository.findAll(); }
 
     @GetMapping("/subject/{user}")
     public List<Subject> getSubjectByUser(@PathVariable("user") String user) {
@@ -32,15 +31,21 @@ public class SubjectController {
         return "Success";
     }
 
-    @RequestMapping(value = "administrator/subject/addStudent", method = RequestMethod.POST)
+    @RequestMapping(value = "/administrator/subject/addStudent", method = RequestMethod.POST)
     public String addStudentToSubject(@RequestParam String subject, @RequestParam String user) {
         // SOMETHING
-        return "Not a functional endpoint";
+        return "" + user + " enrolled in " + subject;
     }
 
-    @PutMapping("/administrator/subject/status/active/{subject}")
-    public String setSubjectActive(@PathVariable("subject") String subject) {
+    @RequestMapping(value = "/administrator/subject/status/active", method = RequestMethod.POST)
+    public String setSubjectActive(@RequestParam String subject) {
         subjectRepository.setSubjectActive(subject);
         return "" + subject + " is now active";
+    }
+
+    @RequestMapping(value = "/administrator/subject/status/inactive", method = RequestMethod.POST)
+    public String setSubjectInactive(@RequestParam String subject) {
+        subjectRepository.setSubjectInactive(subject);
+        return "" + subject + " is now inactive";
     }
 }

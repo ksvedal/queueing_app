@@ -1,5 +1,8 @@
 # client
 
+# Endpoints:
+https://documenter.getpostman.com/view/20349392/UVysywYu
+
 ## Project setup
 ```
 npm install

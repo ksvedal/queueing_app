@@ -23,4 +23,8 @@ public interface SubjectRepository extends JpaRepository<Subject, Long> {
     @Query(value = "update subject set active = 1 where subject = :subject", nativeQuery = true)
     @Modifying(clearAutomatically = true)
     void setSubjectActive(@Param("subject") String subject);
+
+    @Query(value = "update subject set active = 0 where subject = :subject", nativeQuery = true)
+    @Modifying(clearAutomatically = true)
+    void setSubjectInactive(@Param("subject") String subject);
 }

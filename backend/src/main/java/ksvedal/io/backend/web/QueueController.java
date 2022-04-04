@@ -15,8 +15,8 @@ public class QueueController {
     @Autowired
     private QueueRepository queueRepository;
 
-    @PostMapping ("/queue/{queue}")
-    public void addToQueue(@PathVariable Queue queue) {
-        queueRepository.save(queue);
+    @RequestMapping(value = "/queue/addStudentToSubjectQueue", method = RequestMethod.POST)
+    public String addStudentToSubjectQueue(@RequestParam String subject, @RequestParam String user) {
+        return "Not a functional endpoint";
     }
 }

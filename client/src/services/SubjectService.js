@@ -19,7 +19,7 @@ export default {
     })  
   },
   getAllSubjects() {
-    return apiClient.get('administrator/subject')
+    return apiClient.get('/administrator/subject')
   },
   getSubjectsByUser(user) {
     return apiClient.get('/subject/' + user)
