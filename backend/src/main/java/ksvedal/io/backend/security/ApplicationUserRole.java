@@ -3,6 +3,9 @@ package ksvedal.io.backend.security;
 import com.google.common.collect.Sets;
 import java.util.Set;
 
+/**
+ * Roles for user.
+ */
 public enum ApplicationUserRole {
     STUDENT(Sets.newHashSet()),
     ADMINISTRATOR(Sets.newHashSet());

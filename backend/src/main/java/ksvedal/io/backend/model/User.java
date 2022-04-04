@@ -1,9 +1,10 @@
 package ksvedal.io.backend.model;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 
+/**
+ * User class to contain user information
+ */
 @Entity
 public class User {
 

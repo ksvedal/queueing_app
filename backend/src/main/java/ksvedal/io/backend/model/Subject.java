@@ -2,6 +2,9 @@ package ksvedal.io.backend.model;
 
 import javax.persistence.*;
 
+/**
+ * Subject object to contain subject information.
+ */
 @Entity
 public class Subject {
 
@@ -26,7 +29,9 @@ public class Subject {
         this.active = active;
     }
 
-    private Subject() {}
+    public Subject() {
+
+    }
 
     public Long getId() {
         return id;

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
+/**
+ * Queue controller for the custom queue view.
+ */
 @org.springframework.web.bind.annotation.RestController
 public class Queue_viewController {
 
@@ -18,6 +21,11 @@ public class Queue_viewController {
     @Autowired
     private Queue_viewRepository queueViewRepository;
 
+    /**
+     * Find queue for specified subject.
+     * @param subject Subject to find queue for.
+     * @return Queue for subject as list.
+     */
     @GetMapping("/queue/{subject}")
     public List<Queue_view> getSubjects(@PathVariable("subject") String subject) {
         return queueViewRepository.findQueueBySubject(subject);

@@ -2,6 +2,9 @@ package ksvedal.io.backend.model;
 
 import javax.persistence.*;
 
+/*
+ * Queue view specialized to display the queued user and their preferences.
+ */
 @Entity
 public class Queue_view {
 

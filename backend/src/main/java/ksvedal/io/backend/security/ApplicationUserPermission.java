@@ -1,5 +1,8 @@
 package ksvedal.io.backend.security;
 
+/**
+ * Permissions for user.
+ */
 public enum ApplicationUserPermission {
     STUDENT_READ("student:read"),
     STUDENT_WRITE("student:write"),

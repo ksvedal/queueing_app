@@ -2,6 +2,9 @@ package ksvedal.io.backend.model;
 
 import javax.persistence.*;
 
+/*
+* Queue model with information about the subject, user and extra info the user entered.
+ */
 @Entity
 public class Queue {
 
